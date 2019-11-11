@@ -55,5 +55,7 @@ class CustomersController extends Controller
         return redirect("customers");
     }
 
-    public function show($customer) {}
+    public function show($customer) {
+        //function for showing customers here
+    }
 }
