@@ -20,8 +20,8 @@
       <label for='active'>Status</label>
       <select name="active" id="active" class="form-control">
       <option value="" disabled>Select Customer Status</option>
-      <option value="1">Active</option>
-      <option value="0">Inactive</option>
+      <option value="1" {{ $customer->active == 'Active' ? 'selected' : '' }}>Active</option>
+      <option value="0" {{ $customer->active == 'Inactive' ? 'selected' : '' }}>Inactive</option>
       </select>
       {{ $errors->first('active')}} 
     </div>
