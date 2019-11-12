@@ -17,7 +17,7 @@
 <div class="row">
   <div class="col-12">
     <h2>Customer List "Using Blade"</h2>
-    <p><a href="customers/create">Add New Customer</a></p>
+    <p><a href="/customers/create">Add New Customer</a></p>
   </div>
 </div>
 
