@@ -15,13 +15,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view('contact', 'contact');
+//Route::view('contact', 'contact');
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
 Route::view('info', 'about');
 
-Route::get('customers', 'CustomersController@index');
-Route::get('customers/create', 'CustomersController@create');
-Route::post('customers', 'CustomersController@store');
-Route::get('customers/{something}', 'CustomersController@show');
-Route::get('customers/{customer}/edit', 'CustomersController@edit');
-Route::patch('customers/{customer}', 'CustomersController@update');
-Route::delete('customers/{customer}', 'CustomersController@destroy');
+// Route::get('customers', 'CustomersController@index');
+// Route::get('customers/create', 'CustomersController@create');
+// Route::post('customers', 'CustomersController@store');
+// Route::get('customers/{something}', 'CustomersController@show');
+// Route::get('customers/{customer}/edit', 'CustomersController@edit');
+// Route::patch('customers/{customer}', 'CustomersController@update');
+// Route::delete('customers/{customer}', 'CustomersController@destroy');
+
+//use of Route::resource is only possible because name convention was followed
+Route::resource('customers', 'CustomersController');

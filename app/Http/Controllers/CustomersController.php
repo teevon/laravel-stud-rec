@@ -50,9 +50,9 @@ class CustomersController extends Controller
     }
 
     //public function show($customer) {
-    public function show(Customer $something) {
+    public function show(Customer $customer) {
         //function for showing customers here
-        $customer = $something;
+        //$customer = $something;
         // $customer = Customer::where('id', $customer)->firstOrFail();
         return view('customers.show', compact('customer'));
     }
