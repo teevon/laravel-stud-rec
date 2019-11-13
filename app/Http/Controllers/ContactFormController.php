@@ -16,6 +16,8 @@ class ContactFormController extends Controller
         $data = $this->validateRequest();
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));
+        return redirect("/contact");
+   
     }
     
 
