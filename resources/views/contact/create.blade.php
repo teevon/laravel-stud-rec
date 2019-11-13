@@ -5,7 +5,7 @@
 @section('content')
  <h1>Contact Us Here</h1>
 
- <form action="/contact" method="post">
+ <form action="contact" method="post">
    <div class=form-group>
       <label for="name">Name:</label>
       <input type='text' placeholder="" name="name" value="{{ old('name') }}" class="form-control">

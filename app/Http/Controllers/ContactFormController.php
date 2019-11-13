@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\ContactFormMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -11,8 +13,11 @@ class ContactFormController extends Controller
     }
 
     public function store() {
-        dd($this->validateRequest());
+        $data = $this->validateRequest();
+
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
     }
+    
 
     private function validateRequest() {
         return request()->validate([
