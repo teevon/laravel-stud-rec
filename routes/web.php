@@ -30,3 +30,6 @@ Route::view('info', 'about');
 
 //use of Route::resource is only possible because name convention was followed
 Route::resource('customers', 'CustomersController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

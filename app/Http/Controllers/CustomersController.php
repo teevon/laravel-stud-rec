@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class CustomersController extends Controller
 {
     //
+    public function __construct() {
+        $this->middleware('auth')->except(['index']);
+    }
+
     public function index() {
         $customers = Customer::all();
         //Alternate method of listing customers

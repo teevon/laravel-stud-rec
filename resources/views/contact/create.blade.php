@@ -1,10 +1,11 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Contact Us')
 
 @section('content')
  <h1>Contact Us Here</h1>
 
+@if( !session()->has('message'))
  <form action="contact" method="post">
    <div class=form-group>
       <label for="name">Name:</label>
@@ -30,4 +31,5 @@
 
     <button type="submit" class="btn btn-primary">Send Message</button>
  </form>
+ @endif
  @endsection

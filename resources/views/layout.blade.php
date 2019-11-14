@@ -10,7 +10,13 @@
 </head>
 <body>
   <div class="container">
-    @include("nav", ['username' => 'neo'])
+    @if(session()->has('message'))
+     <div class="alert alert-success" role="alert">
+       <strong>Success</strong>
+       {{ session()->get('message') }}
+     </div>
+    @endif
+     
     @yield('content')
   </div>
   <script src="{{ asset('js/jquery-1.12.4.js') }}"></script>
