@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CustomersController extends Controller
 {
@@ -39,7 +40,14 @@ class CustomersController extends Controller
 
     public function store() {
 
-        Customer::create($this->validateRequest());
+        $customer = Customer::create($this->validateRequest());
+        Mail::to($customer->email)->send(new WelcomeNewUser);
+
+        // Register to new user
+        dump('register to newsletter');
+
+        // Slack notification to admin
+        dump('Slack message to admin');
         /* //cumbersome method of creating customer
         $customer = new Customer();
         $customer->name = request('name');
